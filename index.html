@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+    Confirmations & Metadata:
+    - Palette: Neon Cyber & Slate (Backgrounds: #0f172a, #1e293b. Accents: #06b6d4, #8b5cf6, #ec4899, #10b981)
+    - Plan Summary: 
+        1. Intro/Hook: Overview of the optimization stack.
+        2. Key Metrics: Total active compounds, total Mg intake.
+        3. Timeline Flow: Chronological breakdown of morning to evening requirements.
+        4. Categorical Analysis: Donut chart displaying stack diversity (Vitamins vs Aminos vs Meds).
+        5. Dosage Scale: Bar chart comparing macro-dosages of amino acids/compounds in mg.
+        6. Interaction Rules: Structured visual matrix for synergies and conflicts.
+    - Confirmations: NEITHER Mermaid JS NOR SVG were used anywhere in the output.
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocol Blueprint: Daily Supplement & Medication Stack</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #0f172a; color: #f8fafc; }
+        .chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
+        @media (min-width: 768px) { .chart-container { height: 400px; } }
+        .timeline-node::before { content: '●'; position: absolute; left: -1.45rem; top: 0.1rem; color: #06b6d4; font-size: 1.5rem; line-height: 1; }
+        .timeline-node-purple::before { color: #8b5cf6; }
+        .timeline-node-pink::before { color: #ec4899; }
+        .glass-card { background-color: #1e293b; border: 1px solid #334155; border-radius: 0.75rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5); }
+    </style>
+</head>
+<body class="antialiased p-4 md:p-8">
+
+    <header class="max-w-6xl mx-auto mb-12 text-center mt-8">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-500 mb-4">Protocol Blueprint v1.0</h1>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto">A comprehensive visualization of your daily pharmacological and nutritional stack, optimized for cognitive performance, sustained energy, and regenerative sleep.</p>
+    </header>
+
+    <main class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8">
+
+        <section class="md:col-span-12 grid grid-cols-1 md:grid-cols-3 gap-6 mb-4">
+            <div class="glass-card p-6 flex flex-col items-center justify-center text-center border-t-4 border-cyan-500">
+                <span class="text-5xl font-black text-white mb-2">18</span>
+                <span class="text-sm uppercase tracking-wider text-slate-400 font-semibold">Active Compounds</span>
+            </div>
+            <div class="glass-card p-6 flex flex-col items-center justify-center text-center border-t-4 border-emerald-500">
+                <span class="text-5xl font-black text-white mb-2">250<span class="text-2xl text-slate-400">mg</span></span>
+                <span class="text-sm uppercase tracking-wider text-slate-400 font-semibold">Total Daily Magnesium</span>
+                <span class="text-xs text-emerald-400 mt-1">Within optimal safe range</span>
+            </div>
+            <div class="glass-card p-6 flex flex-col items-center justify-center text-center border-t-4 border-violet-500">
+                <span class="text-5xl font-black text-white mb-2">3</span>
+                <span class="text-sm uppercase tracking-wider text-slate-400 font-semibold">Chronological Phases</span>
+            </div>
+        </section>
+
+        <section class="md:col-span-5 glass-card p-6 md:p-8">
+            <h2 class="text-2xl font-bold text-white mb-2 border-b border-slate-700 pb-2">The Daily Timeline</h2>
+            <p class="text-sm text-slate-400 mb-8">Strategic administration is crucial. This timeline dictates exactly when each compound should be introduced to maximize bioavailability and prevent negative interactions.</p>
+
+            <div class="border-l-2 border-slate-700 ml-4 pl-6 relative space-y-10">
+                
+                <div class="timeline-node relative">
+                    <h3 class="text-lg font-bold text-cyan-400 mb-1">Morning: Activation</h3>
+                    <p class="text-xs text-slate-500 mb-3">Focus on dopamine support & foundational nutrients.</p>
+                    <ul class="space-y-2">
+                        <li class="bg-slate-800 p-3 rounded text-sm"><strong class="text-white">The Core Core:</strong> Elvanse 30mg + L-Theanine 200mg (Stacked together)</li>
+                        <li class="bg-slate-800 p-3 rounded text-sm"><strong class="text-white">Pre/With Core:</strong> L-Tyrosine 1g</li>
+                        <li class="bg-slate-800 p-3 rounded text-sm border-l-2 border-amber-500"><strong class="text-amber-400">With Food (Fat):</strong> Omega-3 (2 caps), D3 (62.5µg), K2 (100µg)</li>
+                        <li class="bg-slate-800 p-3 rounded text-sm border-l-2 border-emerald-500"><strong class="text-emerald-400">With Any Food:</strong> Creatine (3g), L-Arginine (3g)</li>
+                        <li class="bg-slate-800 p-3 rounded text-sm"><strong class="text-white">General AM:</strong> Ginkgo Biloba 120mg, Mag Citrate 125mg, Cocolytes (Water)</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-node timeline-node-pink relative">
+                    <h3 class="text-lg font-bold text-pink-400 mb-1">Afternoon: Maintenance</h3>
+                    <p class="text-xs text-slate-500 mb-3">Sustaining levels & hard cutoffs.</p>
+                    <ul class="space-y-2">
+                        <li class="bg-slate-800 p-3 rounded text-sm border-l-2 border-rose-500"><strong class="text-rose-400">Empty Stomach (>2h post-Elvanse):</strong> NAC 700mg</li>
+                        <li class="bg-slate-800 p-3 rounded text-sm"><strong class="text-white">As Needed (Pre-15:00):</strong> Dexfarm 5mg</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-node timeline-node-purple relative">
+                    <h3 class="text-lg font-bold text-violet-400 mb-1">Evening: Downregulation</h3>
+                    <p class="text-xs text-slate-500 mb-3">Focus on nervous system relaxation & sleep prep.</p>
+                    <ul class="space-y-2">
+                        <li class="bg-slate-800 p-3 rounded text-sm"><strong class="text-white">Early Evening:</strong> Vit C 500mg + Zinc 4mg (Away from Elvanse/Mg)</li>
+                        <li class="bg-slate-800 p-3 rounded text-sm"><strong class="text-white">Post-18:00:</strong> Valerian Tincture (30 drops)</li>
+                        <li class="bg-slate-800 p-3 rounded text-sm"><strong class="text-white">Pre-Sleep (30-60m):</strong> Melatonin 2mg, Tryptophan 220mg, Mag Citrate 125mg</li>
+                        <li class="bg-slate-800 p-3 rounded text-sm border-l-2 border-red-500"><strong class="text-red-400">SOS Only:</strong> Zopiclone 7.5mg (Flag if >3x/week)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="md:col-span-7 flex flex-col gap-8">
+            
+            <div class="glass-card p-6 md:p-8 w-full">
+                <h2 class="text-2xl font-bold text-white mb-2">Stack Composition Analysis</h2>
+                <p class="text-sm text-slate-400 mb-4">A breakdown of your routine by biochemical category. This donut chart illustrates the balance between pure medications, structural aminos, and essential vitamins/minerals.</p>
+                <div class="chart-container">
+                    <canvas id="categoryChart"></canvas>
+                </div>
+            </div>
+
+            <div class="glass-card p-6 md:p-8 w-full">
+                <h2 class="text-2xl font-bold text-white mb-2">Macro-Compound Dosages</h2>
+                <p class="text-sm text-slate-400 mb-4">Comparing the absolute milligram load of your highest-dose amino acids and structural compounds. Visualizing this ensures you are managing hepatic/renal processing loads effectively.</p>
+                <div class="chart-container">
+                    <canvas id="aminoChart"></canvas>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="md:col-span-12 glass-card p-6 md:p-8 mt-4">
+            <h2 class="text-2xl font-bold text-white mb-6 text-center">Critical Interaction Matrix</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="bg-slate-800 rounded-lg p-5 border-t-4 border-emerald-500 shadow-lg">
+                    <h3 class="text-lg font-bold text-emerald-400 mb-3 flex items-center gap-2">
+                        <span class="text-2xl">&#10003;</span> Synergies & Co-factors
+                    </h3>
+                    <ul class="text-sm text-slate-300 space-y-3">
+                        <li><strong>Elvanse + L-Theanine:</strong> Theanine smooths out the stimulant curve.</li>
+                        <li><strong>D3 + K2 + Fatty Food:</strong> Vitamins are fat-soluble; K2 directs D3-absorbed calcium into bones.</li>
+                        <li><strong>Tyrosine -> Elvanse:</strong> Provides raw dopamine precursors for the medication to utilize.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-800 rounded-lg p-5 border-t-4 border-rose-500 shadow-lg">
+                    <h3 class="text-lg font-bold text-rose-400 mb-3 flex items-center gap-2">
+                        <span class="text-2xl">&#9888;</span> Conflicts & Separations
+                    </h3>
+                    <ul class="text-sm text-slate-300 space-y-3">
+                        <li><strong>Vit C vs Elvanse:</strong> Vitamin C (ascorbic acid) increases excretion rates of amphetamines. Take PM only.</li>
+                        <li><strong>Vit C vs Magnesium:</strong> Separating prevents potential minor absorption competition.</li>
+                        <li><strong>NAC vs Elvanse:</strong> NAC can blunt stimulant effects. Maintain strict 2+ hour gap.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-800 rounded-lg p-5 border-t-4 border-amber-500 shadow-lg">
+                    <h3 class="text-lg font-bold text-amber-400 mb-3 flex items-center gap-2">
+                        <span class="text-2xl">&#9200;</span> Temporal Strictures
+                    </h3>
+                    <ul class="text-sm text-slate-300 space-y-3">
+                        <li><strong>L-Tyrosine:</strong> Do not take after 17:00 (insomnia risk).</li>
+                        <li><strong>Dexfarm:</strong> Hard cutoff at 15:00 (half-life sleep disruption).</li>
+                        <li><strong>Zopiclone:</strong> Absolute limit: 3x/week max to prevent tolerance/dependence.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        function wrapLabels(labels) {
+            return labels.map(label => {
+                if (label.length <= 16) return label;
+                const words = label.split(' ');
+                let lines = [];
+                let currentLine = words[0];
+                for (let i = 1; i < words.length; i++) {
+                    if (currentLine.length + words[i].length + 1 <= 16) {
+                        currentLine += ' ' + words[i];
+                    } else {
+                        lines.push(currentLine);
+                        currentLine = words[i];
+                    }
+                }
+                lines.push(currentLine);
+                return lines;
+            });
+        }
+
+        const tooltipConfig = {
+            tooltip: {
+                backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                titleColor: '#f8fafc',
+                bodyColor: '#cbd5e1',
+                borderColor: '#334155',
+                borderWidth: 1,
+                callbacks: {
+                    title: function(tooltipItems) {
+                        const item = tooltipItems[0];
+                        let label = item.chart.data.labels[item.dataIndex];
+                        if (Array.isArray(label)) {
+                            return label.join(' ');
+                        } else {
+                            return label;
+                        }
+                    }
+                }
+            },
+            legend: {
+                labels: { color: '#cbd5e1', font: { family: 'ui-sans-serif, system-ui, sans-serif' } }
+            }
+        };
+
+        const ctxCategory = document.getElementById('categoryChart').getContext('2d');
+        const categoryLabelsRaw = ['Amino Acids & Proteins', 'Vitamins & Minerals', 'Pharmaceutical Meds', 'Herbal Extracts', 'Lipids & Electrolytes'];
+        const categoryLabels = wrapLabels(categoryLabelsRaw);
+        
+        new Chart(ctxCategory, {
+            type: 'doughnut',
+            data: {
+                labels: categoryLabels,
+                datasets: [{
+                    data: [6, 4, 4, 2, 2],
+                    backgroundColor: [
+                        '#06b6d4', 
+                        '#10b981', 
+                        '#ec4899', 
+                        '#8b5cf6', 
+                        '#f59e0b'  
+                    ],
+                    borderColor: '#1e293b',
+                    borderWidth: 2,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: tooltipConfig,
+                cutout: '70%'
+            }
+        });
+
+        const ctxAmino = document.getElementById('aminoChart').getContext('2d');
+        const aminoLabelsRaw = ['Creatine Monohydrate', 'L-Arginine Base', 'L-Tyrosine Nootropic', 'N-Acetyl Cysteine', 'L-Tryptophan', 'L-Theanine Extract'];
+        const aminoLabels = wrapLabels(aminoLabelsRaw);
+
+        new Chart(ctxAmino, {
+            type: 'bar',
+            data: {
+                labels: aminoLabels,
+                datasets: [{
+                    label: 'Dosage (mg)',
+                    data: [3000, 3000, 1000, 700, 220, 200],
+                    backgroundColor: 'rgba(139, 92, 246, 0.8)',
+                    borderColor: '#8b5cf6',
+                    borderWidth: 1,
+                    borderRadius: 4,
+                    hoverBackgroundColor: '#a78bfa'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y', 
+                plugins: tooltipConfig,
+                scales: {
+                    x: {
+                        grid: { color: '#334155' },
+                        ticks: { color: '#94a3b8' },
+                        title: { display: true, text: 'Milligrams (mg)', color: '#cbd5e1' }
+                    },
+                    y: {
+                        grid: { display: false },
+                        ticks: { color: '#cbd5e1', font: { size: 11 } }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
